@@ -1,0 +1,10 @@
+# Local model credentials and workstation files.
+/config.json
+.env
+.env.*
+!.env.example
+node_modules/
+playwright-report/
+test-results/
+*.log
+.DS_Store
