@@ -18,14 +18,14 @@
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; color: var(--ink); background: var(--canvas); font: 14px/1.5 "DM Sans", "Noto Sans Arabic", sans-serif; }
+body { margin: 0; color: var(--ink); background: var(--canvas); font: 14px/1.5 "DM Sans", "Noto Sans Arabic", "Noto Sans SC", sans-serif; }
 button, input, textarea, select { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 button { cursor: pointer; }
 .app-shell { min-height: 100vh; }
 .topbar { height: 72px; background: #fff; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; padding: 0 30px; position: sticky; top: 0; z-index: 30; }
 .brand-wrap, .top-actions, .brand, .profile-btn, .workspace-select { display: flex; align-items: center; }
-.brand { text-decoration: none; color: var(--ink); font: 800 23px/1 Manrope, sans-serif; letter-spacing: -.8px; gap: 9px; }
+.brand { text-decoration: none; color: var(--ink); font: 800 23px/1 Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; letter-spacing: -.8px; gap: 9px; }
 .brand-mark { width: 25px; height: 25px; display: inline-grid; grid-template-columns: 9px 9px 9px; align-items: end; gap: 2px; transform: skew(-12deg); }
 .brand-mark:empty { display: none; }
 .brand-mark span { display: block; border-radius: 7px 7px 2px 2px; background: var(--purple); }
@@ -79,7 +79,7 @@ button { cursor: pointer; }
 .mobile-backdrop { display: none; }
 .eyebrow { color: var(--purple); letter-spacing: 1.35px; font-size: 10px; font-weight: 800; text-transform: uppercase; }
 .page-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; gap: 20px; }
-.page-header h1 { font: 800 28px/1.2 Manrope, sans-serif; margin: 5px 0 7px; letter-spacing: -.7px; }
+.page-header h1 { font: 800 28px/1.2 Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 5px 0 7px; letter-spacing: -.7px; }
 .page-header p { color: var(--muted); margin: 0; }
 .page-header-actions { display: flex; gap: 9px; align-items: center; }
 .primary-btn, .secondary-btn, .green-btn { border: 0; border-radius: 9px; padding: 11px 16px; font-weight: 700; font-size: 12px; transition: .18s; }
@@ -94,7 +94,7 @@ button { cursor: pointer; }
 .hero-card:after { content: ""; width: 340px; height: 340px; border-radius: 50%; border: 1px solid rgba(174,233,75,.2); position: absolute; right: 90px; top: -205px; box-shadow: 0 0 0 34px rgba(174,233,75,.045), 0 0 0 69px rgba(174,233,75,.035), 0 0 0 104px rgba(174,233,75,.025); }
 .hero-content { position: relative; z-index: 1; max-width: 600px; }
 .hero-card .eyebrow { color: var(--green); }
-.hero-card h2 { font: 800 27px/1.15 Manrope, sans-serif; letter-spacing: -.6px; margin: 7px 0 10px; }
+.hero-card h2 { font: 800 27px/1.15 Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; letter-spacing: -.6px; margin: 7px 0 10px; }
 .hero-card p { color: #c9c6de; margin: 0 0 20px; max-width: 510px; }
 .hero-actions { display: flex; gap: 10px; }
 .hero-actions .primary-btn { color: var(--ink); background: var(--green); box-shadow: none; }
@@ -108,7 +108,7 @@ button { cursor: pointer; }
 .hero-mini-card b { font-size: 16px; margin-top: 5px; }
 .progress-section { margin: 28px 0 24px; }
 .section-title-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-.section-title-row h3 { font: 800 16px Manrope, sans-serif; margin: 0; }
+.section-title-row h3 { font: 800 16px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 0; }
 .muted-note { color: var(--muted); font-size: 11px; }
 .flow-track { position: relative; display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
 .flow-track:before { content: ""; height: 2px; background: #e2e1ed; position: absolute; top: 16px; left: 22px; right: 22px; z-index: 0; }
@@ -121,7 +121,7 @@ button { cursor: pointer; }
 .metric-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 13px; margin: 20px 0; }
 .metric-card { padding: 17px; min-height: 108px; }
 .metric-card span, .metric-card small { display: block; color: var(--muted); font-size: 11px; }
-.metric-card strong { display: block; font: 800 28px Manrope, sans-serif; margin: 5px 0 2px; }
+.metric-card strong { display: block; font: 800 28px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 5px 0 2px; }
 .metric-card.accent { background: var(--purple-dark); color: #fff; border-color: var(--purple-dark); }
 .metric-card.accent span, .metric-card.accent small { color: #c9c6de; }
 .catalog-toolbar { display: flex; gap: 10px; align-items: center; margin-bottom: 22px; }
@@ -139,16 +139,16 @@ button { cursor: pointer; }
 .product-card-head strong { font-size: 12px; }
 .product-card-head small { color: var(--muted); font-size: 10px; margin-top: 1px; }
 .product-card-body { padding: 17px; }
-.product-card-body h3 { font: 800 17px Manrope, sans-serif; margin: 9px 0 5px; }
+.product-card-body h3 { font: 800 17px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 9px 0 5px; }
 .product-card-body p { color: var(--muted); font-size: 11px; min-height: 34px; margin: 0; }
 .product-price { display: flex; align-items: baseline; gap: 7px; margin: 17px 0 12px; }
-.product-price strong { font: 800 19px Manrope, sans-serif; }
+.product-price strong { font: 800 19px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; }
 .product-price span { color: var(--muted); font-size: 10px; }
 .tag-row { display: flex; flex-wrap: wrap; gap: 5px; }
 .tag-row .tag { color: var(--ink-2); background: #f3f2f8; border-radius: 6px; padding: 4px 7px; font-size: 9px; }
 .product-card-foot { display: flex; justify-content: space-between; align-items: center; gap: 9px; border-top: 1px solid var(--line); padding: 11px 16px; color: var(--muted); font-size: 10px; }
 .provider-strip { padding: 17px 20px; }
-.provider-strip h3 { font: 800 14px Manrope, sans-serif; margin: 0 0 13px; }
+.provider-strip h3 { font: 800 14px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 0 0 13px; }
 .category-section { margin: 27px 0 21px; }
 .category-grid { display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: 10px; }
 .category-tile { min-height: 105px; border: 1px solid var(--line); border-radius: 12px; background: #fff; color: var(--ink); padding: 13px 11px; text-align: left; display: flex; flex-direction: column; align-items: flex-start; gap: 5px; transition: .18s; }
@@ -164,23 +164,23 @@ button { cursor: pointer; }
 .tag-filter:hover, .tag-filter.selected { border-color: var(--purple); color: var(--purple); background: var(--purple-soft); }
 .compact-grid { margin-top: 13px; margin-bottom: 0; }
 .contact-panel { display: flex; justify-content: space-between; gap: 20px; padding: 15px; margin-top: 18px; border: 1px solid #dcebbd; border-radius: 11px; background: #f7fbeF; }
-.contact-panel h3 { margin: 4px 0 0; font: 800 14px Manrope, sans-serif; }
+.contact-panel h3 { margin: 4px 0 0; font: 800 14px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; }
 .contact-panel p { margin: 2px 0 0; color: var(--muted); font-size: 10px; }
 .contact-details { display: grid; gap: 4px; align-content: center; text-align: right; font-size: 11px; }
 .contact-details a { color: var(--purple); text-decoration: none; }
 .publish-modal { max-width: 720px; }
-.publish-modal h2 { font: 800 22px Manrope, sans-serif; margin: 6px 0; }
+.publish-modal h2 { font: 800 22px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 6px 0; }
 .publish-modal .modal-lede { margin-bottom: 16px; }
 .profile-layout { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(260px,.75fr); gap: 16px; align-items: start; }
 .profile-card { padding: 23px; }
 .profile-heading { display: flex; align-items: center; gap: 13px; padding-bottom: 19px; margin-bottom: 18px; border-bottom: 1px solid var(--line); }
-.profile-heading h2 { margin: 3px 0; font: 800 20px Manrope, sans-serif; }
+.profile-heading h2 { margin: 3px 0; font: 800 20px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; }
 .profile-heading .lede { margin: 0; }
 .profile-avatar { width: 49px; height: 49px; font-size: 18px; }
-.profile-card h3 { font: 800 14px Manrope, sans-serif; margin: 0 0 13px; }
+.profile-card h3 { font: 800 14px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 0 0 13px; }
 .profile-side { display: grid; gap: 14px; }
 .profile-tip { padding: 19px; }
-.profile-tip h3 { font: 800 16px Manrope, sans-serif; margin: 6px 0; }
+.profile-tip h3 { font: 800 16px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 6px 0; }
 .profile-tip p { color: var(--muted); font-size: 11px; line-height: 1.55; }
 .profile-tip .primary-btn { margin-top: 7px; }
 .profile-checks { display: grid; gap: 7px; margin-top: 13px; color: var(--green-dark); font-size: 10px; }
@@ -193,13 +193,13 @@ button { cursor: pointer; }
 .request-layout, .evaluation-layout { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(280px,.75fr); gap: 16px; }
 .request-list, .evaluation-list { display: grid; gap: 13px; align-content: start; }
 .request-card { padding: 18px; }
-.request-card h3 { font: 800 15px Manrope, sans-serif; margin: 4px 0 3px; }
+.request-card h3 { font: 800 15px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 4px 0 3px; }
 .request-card .section-header p { color: var(--muted); margin: 0; font-size: 10px; }
 .request-need { color: var(--ink-2); font-size: 11px; line-height: 1.55; margin: 15px 0; }
 .request-facts { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 15px; }
 .request-facts span { padding: 5px 7px; border-radius: 6px; background: #f5f4f9; color: var(--muted); font-size: 9px; }
 .request-builder { padding: 20px; align-self: start; }
-.request-builder h3 { font: 800 16px Manrope, sans-serif; margin: 6px 0; }
+.request-builder h3 { font: 800 16px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 6px 0; }
 .request-builder p { color: var(--muted); font-size: 11px; line-height: 1.55; }
 .request-builder textarea { width: 100%; min-height: 130px; margin: 10px 0 13px; border: 1px solid var(--line); border-radius: 9px; padding: 10px; resize: vertical; font-size: 11px; }
 .evaluation-row { display: flex; align-items: center; gap: 11px; border: 1px solid var(--line); border-radius: 11px; background: #fff; padding: 13px; text-align: left; color: inherit; }
@@ -209,7 +209,7 @@ button { cursor: pointer; }
 .evaluation-row strong { font-size: 11px; }
 .evaluation-row small { color: var(--muted); font-size: 9px; margin-top: 3px; }
 .report-card { padding: 20px; margin-top: 15px; }
-.report-card h2, .report-card h3 { font: 800 17px Manrope, sans-serif; margin: 5px 0; }
+.report-card h2, .report-card h3 { font: 800 17px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 5px 0; }
 .report-card > p { color: var(--muted); font-size: 11px; line-height: 1.6; }
 .report-criteria { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 9px; margin-top: 14px; }
 .report-criteria > div { border: 1px solid var(--line); border-radius: 8px; padding: 10px; }
@@ -220,20 +220,20 @@ button { cursor: pointer; }
 .empty-report { padding: 20px; display: grid; gap: 5px; color: var(--muted); font-size: 11px; }
 .empty-report strong { color: var(--ink); font-size: 13px; }
 .agent-panel { min-height: 350px; }
-.agent-panel h3 { font: 800 16px Manrope, sans-serif; margin: 6px 0; }
+.agent-panel h3 { font: 800 16px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 6px 0; }
 .agent-panel p, .agent-panel li { color: var(--muted); font-size: 11px; }
 .agent-panel ul { padding-left: 18px; line-height: 1.8; min-height: 110px; }
 .agent-panel pre, .report-card pre { white-space: pre-wrap; max-height: 230px; overflow: auto; background: #17163e; color: #d4f2a3; border-radius: 8px; padding: 11px; font-size: 9px; margin-top: 13px; }
 .report-card details { border-top: 1px solid var(--line); padding: 11px 0; font-size: 11px; }
 .report-card summary { cursor: pointer; font-weight: 700; }
 .settings-card { max-width: 780px; }
-.settings-card h2 { font: 800 21px Manrope, sans-serif; margin: 5px 0; }
+.settings-card h2 { font: 800 21px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 5px 0; }
 .settings-card .lede { color: var(--muted); font-size: 12px; }
 .settings-card code { color: var(--purple); }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 4px 15px rgba(29, 26, 76, .025); }
 .card-pad { padding: 20px; }
 .story-card { padding: 24px; }
-.story-card h3 { margin: 0 0 7px; font: 800 17px Manrope, sans-serif; }
+.story-card h3 { margin: 0 0 7px; font: 800 17px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; }
 .story-card > p { color: var(--muted); margin: 0 0 19px; font-size: 12px; }
 .story-row { width: 100%; display: flex; align-items: center; gap: 13px; border: 0; border-top: 1px solid var(--line); padding: 14px 0; background: transparent; color: inherit; text-align: left; }
 .story-number { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 8px; font-weight: 800; color: var(--purple); background: var(--purple-soft); flex: 0 0 28px; }
@@ -242,7 +242,7 @@ button { cursor: pointer; }
 .story-row small { color: var(--muted); font-size: 11px; margin-top: 2px; }
 .story-row .arrow { margin-left: auto; color: var(--muted-2); font-size: 18px; }
 .side-stat-card { padding: 20px; }
-.side-stat-card h3 { font: 800 15px Manrope, sans-serif; margin: 0 0 17px; }
+.side-stat-card h3 { font: 800 15px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 0 0 17px; }
 .stat-item { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--line); padding: 13px 0; }
 .stat-item span { color: var(--muted); font-size: 11px; }
 .stat-item strong { font-size: 15px; }
@@ -254,10 +254,10 @@ button { cursor: pointer; }
 .screen-layout.single { grid-template-columns: minmax(0, 1fr); }
 .screen-main { min-width: 0; }
 .screen-side { display: grid; gap: 14px; }
-.screen-card h2 { font: 800 23px/1.2 Manrope, sans-serif; margin: 5px 0 6px; letter-spacing: -.5px; }
+.screen-card h2 { font: 800 23px/1.2 Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 5px 0 6px; letter-spacing: -.5px; }
 .screen-card .lede { color: var(--muted); margin: 0 0 21px; font-size: 12px; }
 .section-card { padding: 18px; border: 1px solid var(--line); border-radius: 12px; background: #fff; margin-bottom: 14px; }
-.section-card h3 { margin: 0 0 13px; font: 800 14px Manrope, sans-serif; }
+.section-card h3 { margin: 0 0 13px; font: 800 14px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; }
 .section-card h4 { margin: 0 0 7px; font-size: 12px; }
 .section-card p { color: var(--muted); font-size: 12px; margin: 0; }
 .section-header { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
@@ -296,11 +296,14 @@ button { cursor: pointer; }
 .action-row { display: flex; justify-content: flex-end; align-items: center; gap: 9px; margin-top: 14px; }
 .helper-text { color: var(--muted); font-size: 10px; margin-right: auto; }
 .info-card { padding: 17px; }
-.info-card h3 { font: 800 13px Manrope, sans-serif; margin: 0 0 13px; }
+.info-card h3 { font: 800 13px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 0 0 13px; }
 .mini-list { display: grid; gap: 10px; }
 .mini-list > div { display: flex; justify-content: space-between; gap: 10px; font-size: 11px; }
 .mini-list span { color: var(--muted); }
 .mini-list strong { text-align: right; }
+.seller-product .mini-list > div { display: grid; grid-template-columns: max-content minmax(0, 1fr); align-items: start; }
+.seller-product .mini-list span { white-space: nowrap; }
+.seller-product .mini-list strong { min-width: 0; text-align: end; overflow-wrap: anywhere; }
 .source-note { padding: 13px; background: #f8f8fb; border-radius: 9px; color: var(--muted); font-size: 10px; line-height: 1.5; }
 .source-note b { color: var(--ink-2); }
 .approval-strip { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 13px; }
@@ -309,7 +312,7 @@ button { cursor: pointer; }
 .product-preview { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
 .product-preview-top { padding: 17px; background: linear-gradient(135deg,#31296f,#5a45e8); color: #fff; }
 .product-preview-top .tag { background: rgba(255,255,255,.15); color: #fff; margin-bottom: 18px; }
-.product-preview-top h3 { font: 800 20px Manrope, sans-serif; margin: 0 0 5px; }
+.product-preview-top h3 { font: 800 20px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 0 0 5px; }
 .product-preview-top p { color: #d4d1ed; font-size: 11px; margin: 0; }
 .product-preview-body { padding: 17px; }
 .check-line { display: flex; gap: 7px; margin: 9px 0; font-size: 11px; color: var(--ink-2); }
@@ -321,9 +324,9 @@ button { cursor: pointer; }
 .compare-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
 .candidate { border: 1px solid var(--line); border-radius: 12px; padding: 16px; position: relative; }
 .candidate.match { border: 2px solid var(--purple); padding: 15px; }
-.candidate h3 { margin: 0 0 4px; font: 800 15px Manrope, sans-serif; }
+.candidate h3 { margin: 0 0 4px; font: 800 15px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; }
 .candidate .candidate-kicker { color: var(--muted); font-size: 10px; }
-.candidate-price { font: 800 22px Manrope, sans-serif; margin: 16px 0 2px; }
+.candidate-price { font: 800 22px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 16px 0 2px; }
 .candidate-price small { font: 500 10px "DM Sans", sans-serif; color: var(--muted); }
 .candidate-reason { display: flex; gap: 6px; margin: 15px 0; padding: 9px; border-radius: 8px; font-size: 10px; line-height: 1.4; }
 .candidate-reason.fail { background: #fff1f1; color: #a44242; }
@@ -340,7 +343,7 @@ button { cursor: pointer; }
 .deal-layout { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(290px, .9fr); gap: 15px; }
 .deal-chat { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
 .chat-head { display: flex; justify-content: space-between; align-items: center; padding: 13px 15px; border-bottom: 1px solid var(--line); background: #fbfbfd; }
-.chat-head strong { font: 800 13px Manrope, sans-serif; }
+.chat-head strong { font: 800 13px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; }
 .chat-head small { display: block; color: var(--muted); font-size: 10px; margin-top: 2px; }
 .chat-body { min-height: 350px; max-height: 450px; overflow: auto; padding: 17px; background: #f9f9fc; display: grid; align-content: start; gap: 13px; }
 .message { max-width: 82%; display: grid; gap: 5px; }
@@ -356,11 +359,11 @@ button { cursor: pointer; }
 .chat-composer input { min-width: 0; flex: 1; border: 1px solid var(--line); border-radius: 8px; padding: 9px; font-size: 11px; }
 .chat-composer button { border: 0; color: var(--purple); background: var(--purple-soft); border-radius: 8px; padding: 0 13px; font-weight: 700; }
 .quote-card { border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
-.quote-card h3 { font: 800 14px Manrope, sans-serif; margin: 0; }
+.quote-card h3 { font: 800 14px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 0; }
 .quote-card .quote-id { color: var(--muted); font-size: 10px; margin: 3px 0 14px; }
 .quote-total { border-radius: 10px; padding: 13px; background: var(--purple-soft); display: flex; align-items: end; justify-content: space-between; }
 .quote-total span { color: var(--ink-2); font-size: 10px; }
-.quote-total strong { font: 800 22px Manrope, sans-serif; color: var(--purple); }
+.quote-total strong { font: 800 22px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; color: var(--purple); }
 .quote-total small { color: var(--muted); font-size: 9px; }
 .quote-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 11px; }
 .quote-item span { color: var(--muted); }
@@ -369,7 +372,7 @@ button { cursor: pointer; }
 .approval-status { display: flex; justify-content: space-between; align-items: center; gap: 10px; border-top: 1px solid var(--line); padding-top: 13px; margin-top: 13px; }
 .approval-status span { color: var(--muted); font-size: 10px; }
 .pilot-hero { background: linear-gradient(120deg,#2f286b,#4d3d9c); border-radius: 13px; color: #fff; padding: 22px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
-.pilot-hero h3 { font: 800 19px Manrope, sans-serif; margin: 5px 0 4px; }
+.pilot-hero h3 { font: 800 19px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 5px 0 4px; }
 .pilot-hero p { color: #c8c4dc; margin: 0; font-size: 11px; }
 .pilot-hero .eyebrow { color: var(--green); }
 .ready-badge { padding: 8px 11px; border-radius: 8px; background: var(--green); color: var(--ink); font-size: 10px; font-weight: 800; white-space: nowrap; }
@@ -397,7 +400,7 @@ button { cursor: pointer; }
 .auth-view .page-wrap { max-width: 1120px; min-height: calc(100vh - 72px); display: grid; align-items: center; padding-top: 45px; padding-bottom: 45px; }
 .auth-layout { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(360px,.75fr); gap: clamp(35px,7vw,110px); align-items: center; }
 .auth-copy { padding: 15px 0; }
-.auth-copy h1 { max-width: 550px; font: 800 clamp(32px,4.8vw,59px)/1.04 Manrope, sans-serif; letter-spacing: -2px; margin: 12px 0 19px; }
+.auth-copy h1 { max-width: 550px; font: 800 clamp(32px,4.8vw,59px)/1.04 Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; letter-spacing: -2px; margin: 12px 0 19px; }
 .auth-copy > p { max-width: 520px; color: var(--muted); font-size: 15px; line-height: 1.7; }
 .auth-promise { display: flex; gap: 12px; align-items: center; margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); max-width: 430px; }
 .auth-promise > span { width: 35px; height: 35px; display: grid; place-items: center; color: var(--ink); background: var(--green); border-radius: 10px; font-size: 19px; }
@@ -407,7 +410,7 @@ button { cursor: pointer; }
 .auth-card { background: #fff; border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 20px 55px rgba(29,26,76,.1); padding: 30px; }
 .auth-card-mark { width: 40px; height: 40px; display: grid; place-items: center; background: var(--purple-soft); border-radius: 11px; margin-bottom: 19px; }
 .auth-card-mark .brand-mark { transform: scale(.78) skew(-12deg); }
-.auth-card h2 { font: 800 24px Manrope, sans-serif; margin: 0 0 4px; }
+.auth-card h2 { font: 800 24px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 0 0 4px; }
 .auth-subtitle { color: var(--muted); font-size: 12px; margin: 0 0 22px; }
 .auth-card form { display: grid; gap: 13px; }
 .auth-card .field { gap: 6px; }
@@ -421,7 +424,7 @@ button { cursor: pointer; }
 .modal-backdrop[hidden] { display: none; }
 .modal-card { width: min(680px, 100%); max-height: min(760px, calc(100vh - 40px)); overflow: auto; position: relative; background: #fff; border-radius: 18px; padding: 27px; box-shadow: 0 24px 70px rgba(10,8,42,.28); }
 .product-modal-head { display: flex; gap: 13px; align-items: flex-start; padding-right: 28px; }
-.product-modal-head h2 { font: 800 24px/1.2 Manrope, sans-serif; margin: 5px 0; }
+.product-modal-head h2 { font: 800 24px/1.2 Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 5px 0; }
 .product-modal-head p { color: var(--muted); font-size: 11px; line-height: 1.5; margin: 0; }
 .modal-facts { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 8px; margin: 18px 0; }
 .modal-facts > div { border: 1px solid var(--line); background: #fafafd; border-radius: 9px; padding: 11px; }
@@ -429,7 +432,7 @@ button { cursor: pointer; }
 .modal-facts span { color: var(--muted); font-size: 10px; }
 .modal-facts strong { font-size: 12px; margin-top: 5px; }
 .modal-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
-.modal-columns h3 { font: 800 12px Manrope, sans-serif; margin: 0 0 9px; }
+.modal-columns h3 { font: 800 12px Manrope, "Noto Sans Arabic", "Noto Sans SC", sans-serif; margin: 0 0 9px; }
 .modal-list { color: var(--muted); font-size: 11px; line-height: 1.9; margin: 0; }
 .modal-close { border: 0; background: #f2f1f8; color: var(--muted); border-radius: 50%; width: 28px; height: 28px; position: absolute; top: 18px; right: 18px; font-size: 20px; line-height: 1; }
 .modal-lede { color: var(--muted); font-size: 11px; max-width: 555px; margin: 0 0 17px; }
@@ -484,12 +487,12 @@ button { cursor: pointer; }
         }
 
 /* Product shell refinements */
-html[lang="zh-CN"] body { font-family: "Noto Sans SC", "DM Sans", sans-serif; }
+html[lang="zh-CN"] body { font-family: "Noto Sans SC", "DM Sans", "Noto Sans Arabic", sans-serif; }
 html[lang="zh-CN"] h1, html[lang="zh-CN"] h2, html[lang="zh-CN"] h3, html[lang="zh-CN"] h4,
-html[lang="zh-CN"] .brand, html[lang="zh-CN"] .metric-card strong, html[lang="zh-CN"] .candidate-price { font-family: "Noto Sans SC", "DM Sans", sans-serif; letter-spacing: 0; }
-html[lang="ar-SA"] body { font-family: "Noto Sans Arabic", "DM Sans", sans-serif; }
-html[lang="zh-CN"] .page-wrap * { font-family: "Noto Sans SC", "DM Sans", sans-serif; }
-html[lang="ar-SA"] .page-wrap * { font-family: "Noto Sans Arabic", "DM Sans", sans-serif; }
+html[lang="zh-CN"] .brand, html[lang="zh-CN"] .metric-card strong, html[lang="zh-CN"] .candidate-price { font-family: "Noto Sans SC", "DM Sans", "Noto Sans Arabic", sans-serif; letter-spacing: 0; }
+html[lang="ar-SA"] body { font-family: "Noto Sans Arabic", "DM Sans", "Noto Sans SC", sans-serif; }
+html[lang="zh-CN"] .page-wrap * { font-family: "Noto Sans SC", "DM Sans", "Noto Sans Arabic", sans-serif; }
+html[lang="ar-SA"] .page-wrap * { font-family: "Noto Sans Arabic", "DM Sans", "Noto Sans SC", sans-serif; }
 
 .brand { gap: 0; height: 42px; }
 .brand-logo { width: 168px; height: auto; display: block; }
@@ -556,7 +559,7 @@ pre#sellerAgentOutput,pre#requestAgentOutput { max-height:330px; overflow:auto; 
 .candidate h3 { font-size: 16px; }
 .candidate-price { margin: 20px 0 3px; }
 
-.side-stat-card h3 { font-family: "Noto Sans SC", "DM Sans", sans-serif; }
+.side-stat-card h3 { font-family: "Noto Sans SC", "DM Sans", "Noto Sans Arabic", sans-serif; }
 @media (max-width: 1100px) { .compare-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
 @media (max-width: 760px) {
   .brand-logo { width: 136px; }
@@ -630,6 +633,7 @@ html[dir="rtl"] .publish-fields, html[dir="rtl"] .publish-upload { direction: rt
 .publish-modal .field label { color: var(--ink-2); font-size: 11px; }
 .publish-modal .field textarea { min-height: 92px; line-height: 1.65; }
 .publish-modal .field textarea#publishDescription { min-height: 175px; }
+.publish-fields .form-grid > .field:has(> #publishSupport) { grid-column: 1 / -1; }
 .publish-upload { position: sticky; top: 0; padding-inline-start: 26px; border-inline-start: 1px solid var(--line); }
 .publish-dropzone { min-height: 244px; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 26px 18px; border: 1.5px dashed #b9b1dd; background: #faf9fe; border-radius: 8px; text-align: center; cursor: pointer; transition: border-color .18s, background .18s, box-shadow .18s; }
 .publish-dropzone:hover, .publish-dropzone.dragging, .publish-dropzone:focus-within { border-color: var(--purple); background: #f2f0ff; box-shadow: 0 0 0 3px rgba(90,69,232,.08); }
@@ -645,7 +649,19 @@ html[dir="rtl"] .publish-fields, html[dir="rtl"] .publish-upload { direction: rt
 .upload-status:empty { display: none; }
 .upload-status.error { background: #fff6f6; color: #a44242; border-color: #f0cccc; }
 .publish-modal .action-row { padding-top: 18px; margin-top: 22px; border-top: 1px solid var(--line); }
-.product-introduction { margin: 23px 0 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+.product-detail-card { width: min(960px, 100%); }
+.product-introduction { margin: 18px 0; padding-top: 15px; border-top: 1px solid var(--line); }
+.product-full-introduction { margin-top: 10px; }
+.product-full-introduction > summary { width: fit-content; color: var(--purple); font-size: 12px; font-weight: 600; cursor: pointer; }
+.product-full-introduction[open] > summary { margin-bottom: 12px; }
+.product-detail-card .modal-columns { grid-template-columns: 1fr 1.2fr; }
+.product-detail-card .modal-columns > div { min-width: 0; }
+.product-detail-card .modal-columns .tag-row { gap: 6px; }
+.product-detail-card .modal-facts strong { font-size: 14px; }
+.product-detail-card .modal-list { font-size: 12px; }
+.product-detail-card .modal-list br + br { line-height: 1.1; }
+.product-detail-card .product-modal-actions { position: sticky; bottom: -27px; background: #fff; z-index: 1; margin-bottom: 0; }
+
 .product-introduction > p { color: var(--ink-2); font-size: 12px; line-height: 1.85; white-space: pre-line; }
 .product-introduction .markdown-body { color: var(--ink-2); font-size: 12px; line-height: 1.85; }
 .modal-subheading { margin-top: 18px !important; }
@@ -880,6 +896,40 @@ html[dir="rtl"] .home-guide-bubble::before { transform: rotate(-45deg); }
 .chat-message .message-translation-status { margin: 6px 0 0; color: #9c6b37; font-size: 10px; line-height: 1.6; text-align: start; }
 .chat-bubble.translating { background: #f7f6fb; color: var(--muted); border: 1px dashed #dcd6e8; }
 .chat-bubble.translating::after { content: ""; display: inline-block; width: 9px; height: 9px; margin-inline-start: 8px; border: 1.5px solid #d3c9e6; border-top-color: #8c75ba; border-radius: 50%; animation: translationSpin .9s linear infinite; vertical-align: -1px; }
+.message-shell { height: min(760px, calc(100dvh - 190px)); min-height: 520px; }
+.conversation-list { overflow-y: auto; }
+.conversation-item { text-align: start; }
+.chat-window, .chat-messages { min-height: 0; }
+.chat-messages { scrollbar-width: thin; overscroll-behavior: contain; }
+.chat-window-head { flex-shrink: 0; }
+.chat-product-context { display: flex; flex-shrink: 0; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--line); padding: 13px 20px; background: #faf9fd; }
+.chat-product-context > div:first-child { min-width: 0; }
+.chat-product-context > div > span { display: block; color: var(--muted); font-size: 10px; margin-bottom: 4px; }
+.chat-product-title { display: block; max-width: 100%; border: 0; background: transparent; padding: 0; color: var(--ink-2); font-size: 12px; font-weight: 700; line-height: 1.6; text-align: start; overflow-wrap: anywhere; }
+.chat-product-title:hover { color: var(--purple); }
+.chat-product-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; flex-shrink: 0; }
+.chat-product-actions button { padding: 8px 11px; font-size: 11px; white-space: nowrap; }
+.chat-composer { flex-shrink: 0; }
+.chat-bubble { text-align: start; }
+.chat-message.mine .chat-bubble { text-align: start; }
+html[lang="ar-SA"] .page-wrap .message-shell [data-no-translate] { font-family: "Noto Sans Arabic", "Noto Sans SC", "DM Sans", "Noto Sans Arabic", sans-serif; }
+html[lang="ar-SA"] .page-wrap .product-introduction,
+html[lang="ar-SA"] .page-wrap .product-introduction * { font-family: "Noto Sans Arabic", "Noto Sans SC", "DM Sans", "Noto Sans Arabic", sans-serif; }
+/* The opt-in recording workspace keeps messages readable in a two-panel film. */
+@media (min-width: 1000px) {
+  html[data-film-demo="true"] .chat-bubble { font-size: 20px; line-height: 1.75; padding: 12px 16px; }
+  html[data-film-demo="true"] .chat-message { width: min(82%, 840px); }
+  html[data-film-demo="true"] .chat-message > small { font-size: 13px; }
+  html[data-film-demo="true"] .chat-original { font-size: 16px; }
+  html[data-film-demo="true"] .chat-original summary { font-size: 13px; }
+  html[data-film-demo="true"] .chat-product-title { font-size: 15px; }
+}
+@media (max-width: 760px) {
+  .message-shell { height: auto; min-height: 0; }
+  .chat-window { min-height: min(660px, 78dvh); }
+  .chat-messages { max-height: 56dvh; }
+  .chat-product-context { align-items: flex-start; flex-direction: column; gap: 10px; }
+}
 @keyframes translationSpin { to { transform: rotate(360deg); } }
 @media (max-width: 1100px) {
   .provider-directory-card { padding: 19px; }
@@ -1020,4 +1070,8 @@ html[dir="rtl"] .home-guide-bubble::before { transform: rotate(-45deg); }
 }
 @media (max-width: 760px) {
   .sidebar:not(.open) { visibility: hidden; pointer-events: none; }
+  .tag-filter-row { flex-wrap: nowrap; overflow-x: auto; max-width: 100%; padding-bottom: 7px; scrollbar-width: thin; }
+  .tag-filter-row .tag-filter { flex: 0 0 auto; white-space: nowrap; }
+  .product-card-foot { flex-direction: column; align-items: stretch; gap: 12px; }
+  .product-card-foot .secondary-btn { width: 100%; }
 }

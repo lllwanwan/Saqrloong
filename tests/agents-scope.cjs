@@ -124,6 +124,56 @@ async function checkPublisherScope() {
   ok(requests.every(request => request.url === 'config.json'), 'No model or external API requests occur');
 }
 
+function checkReadWorkspaceRecords() {
+  const { agents, requests } = browser();
+  const { db, account } = records();
+  const before = JSON.stringify(db);
+  const read = (role, user, names) => agents.readWorkspaceRecords({
+    role, db, user,
+    requests: names.map(item => typeof item === 'string' ? { name:item } : item)
+  });
+  const seller = read('seller', account, [
+    'get_orders', 'calculate_metrics', 'inspect_inventory',
+    { name:'get_order_details', arguments:{order_id:'FOREIGN-SALE'} },
+    'search_competitors'
+  ]);
+  same(Array.from(seller.results[0], order => order.id).sort(), ['OWN-SALE','PEER-SALE'], 'Shared read helper exposes only seller-company sales');
+  equal(seller.results[1].order_count, 2, 'Shared seller metrics count only own-company sales');
+  equal(seller.results[1].by_currency.USD.booked_total, 300, 'Shared seller metrics exclude foreign sales and personal purchases');
+  same(Array.from(seller.results[2], product => product.id), ['owned-product'], 'Shared seller inventory contains only the owned company');
+  ok(seller.results[3].error, 'Shared seller helper rejects foreign private order details');
+  same(Array.from(seller.results[4], product => product.id), ['foreign-product'], 'Seller competitor search exposes public catalog listings only');
+  equal(seller.tool_trace.length, 5, 'Shared helper records each executed known tool');
+
+  const buyer = read('buyer', account, [
+    'get_orders', 'calculate_metrics', 'inspect_inventory',
+    { name:'get_order_details', arguments:{order_id:'OWN-SALE'} },
+    { name:'get_order_details', arguments:{order_id:'PERSONAL-PURCHASE'} },
+    'search_competitors'
+  ]);
+  same(Array.from(buyer.results[0], order => order.id), ['PERSONAL-PURCHASE'], 'Shared buyer helper reads only purchases made by the current account');
+  equal(buyer.results[1].order_count, 1, 'Shared buyer metrics count only personal purchases');
+  equal(buyer.results[1].by_currency.USD.booked_total, 250, 'Shared buyer metrics do not aggregate owned-company sales');
+  equal(buyer.results[1].inventory_count, 0, 'Buyer role has no private warehouse snapshot');
+  ok(buyer.results[2].error, 'Buyer cannot invoke inspect_inventory through the shared helper');
+  ok(buyer.results[3].error, 'Buyer cannot retrieve own-company sales as purchase details');
+  equal(buyer.results[4].order.id, 'PERSONAL-PURCHASE', 'Buyer can retrieve its actual purchase details');
+  ok(buyer.results[5].error, 'Buyer cannot invoke seller-only competitor tooling');
+  ok(!buyer.tool_trace.some(tool => tool.name === 'inspect_inventory' || tool.name === 'search_competitors'), 'Denied seller-only tools never execute in the buyer scope');
+
+  const spoofed = read('seller', {...account, companyId:'co-foreign'}, ['get_orders','inspect_inventory']);
+  same(Array.from(spoofed.results[0], order => order.id).sort(), ['OWN-SALE','PEER-SALE'], 'Shared helper derives sales scope from the stored identity');
+  same(Array.from(spoofed.results[1], product => product.id), ['owned-product'], 'Caller-supplied companyId cannot replace the stored warehouse scope');
+  const anonymous = read('seller', {id:'unknown',companyId:'co-owned'}, ['get_orders','inspect_inventory']);
+  equal(anonymous.results[0].length, 0, 'An unknown account receives no sales records');
+  equal(anonymous.results[1].length, 0, 'An unknown account receives no warehouse records');
+  for (const user of db.users) for (const key of ['email','password']) {
+    if (user[key]) ok(!JSON.stringify([seller,buyer]).includes(user[key]), `Shared helper excludes private account ${key}`);
+  }
+  equal(JSON.stringify(db), before, 'The shared preview tool path does not mutate workspace records');
+  equal(requests.length, 0, 'Shared workspace record reads require no model or configuration request');
+}
+
 async function checkJsonDescription() {
   const { agents, requests } = browser();
   const description = '## Detailed introduction\n\nExplicit source description with deployment details and limits.';
@@ -383,6 +433,7 @@ async function checkHistoryPersistenceAndIsolation() {
 
 (async () => {
   await checkPublisherScope();
+  checkReadWorkspaceRecords();
   await checkJsonDescription();
   await checkUsdDocumentGrounding();
   await checkOrderFallbackLocalization();

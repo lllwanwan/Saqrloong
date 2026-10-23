@@ -1906,6 +1906,7 @@
   }
   // Keep provider edits and uploaded listings while repairing only recognized seed copy.
   function enrichStoredProducts(db) {
+    if (window.SaqrFilmDemo?.enabled) return false;
     if (!Array.isArray(db.products)) return false;
     let changed = false;
     seed.products.forEach(source => {

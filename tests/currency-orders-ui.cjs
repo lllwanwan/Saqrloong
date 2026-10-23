@@ -99,12 +99,13 @@ const localized = (value, language, label) => {
           return { afterIntro: !!(intro.compareDocumentPosition(node) & Node.DOCUMENT_POSITION_FOLLOWING), beforeDetails: !!(node.compareDocumentPosition(details) & Node.DOCUMENT_POSITION_FOLLOWING), width: node.clientWidth, scroll: node.scrollWidth, modalWidth: modal.clientWidth, modalScroll: modal.scrollWidth, buttons: [...node.querySelectorAll('button')].map(button => ({ action: button.dataset.action, width: button.clientWidth, scroll: button.scrollWidth, left: button.getBoundingClientRect().left, right: button.getBoundingClientRect().right })) };
         });
         check(layout.afterIntro && layout.beforeDetails, `${code}/${width} actions sit between the introduction and detailed information`);
-        check(layout.buttons.map(button => button.action).join(',') === 'close-product,contact-seller,place-order', `${code}/${width} has exactly the requested three actions`);
+        check(layout.buttons.map(button => button.action).join(',') === 'contact-seller,place-order', `${code}/${width} has contact and order actions`);
+        check(await page.locator('#productModal > .modal-card > .modal-close[data-action="close-product"]').count() === 1, `${code}/${width} has a separate dialog close action`);
         for (const [index, text] of (await actions.locator('button').allTextContents()).entries()) localized(text, code, `${code}/${width} product action ${index + 1}`);
         check(layout.scroll <= layout.width + 1 && layout.modalScroll <= layout.modalWidth + 1, `${code}/${width} product actions and dialog do not overflow`);
         check(layout.buttons.every(button => button.scroll <= button.width + 1 && button.left >= 0 && button.right <= width), `${code}/${width} every action fits its responsive layout`);
         await assertUSD(`${code}/${width} product details`);
-        await page.locator('#productModal .product-modal-actions [data-action="close-product"]').click();
+        await page.locator('#productModal > .modal-card > .modal-close[data-action="close-product"]').click();
       }
       await page.setViewportSize({ width: 1440, height: 1000 });
     }
